@@ -70,10 +70,10 @@ function buyShovel() {
     cheese -= clickUpgrades.shovels.price
     clickUpgrades.shovels.price += 8
     updateShovels.innerHTML = `
-    ${clickUpgrades.shovels.quantity} Shovels
+    ${clickUpgrades.shovels.quantity} Resin Strength
     `
     updateSP.innerHTML = `
-    (${clickUpgrades.shovels.price.toFixed(0)}C)
+    (${clickUpgrades.shovels.price.toFixed(0)}S)
     `
     update()
   }
@@ -85,10 +85,10 @@ function buyCheeseMachine() {
     cheese -= clickUpgrades.cheeseMachine.price
     clickUpgrades.cheeseMachine.price *= 1.1
     updateCheeseMachine.innerHTML = `
-    ${clickUpgrades.cheeseMachine.quantity} Cheese Machines
+    ${clickUpgrades.cheeseMachine.quantity} Silver Serpent Rings
     `
     updateCMP.innerHTML = `
-    (${clickUpgrades.cheeseMachine.price.toFixed(0)}C)
+    (${clickUpgrades.cheeseMachine.price.toFixed(0)}S)
     `
     update()
     console.log(clickUpgrades.cheeseMachine.quantity)
@@ -101,10 +101,10 @@ function buyMouse() {
     cheese -= automaticUpgrades.mouse.price
     automaticUpgrades.mouse.price *= 1.1
     updateMice.innerHTML = `
-    ${automaticUpgrades.mouse.quantity} Mice
+    ${automaticUpgrades.mouse.quantity} Friendly Hollowed
     `
     updateMP.innerHTML = `
-    (${automaticUpgrades.mouse.price.toFixed(0)}C)
+    (${automaticUpgrades.mouse.price.toFixed(0)}S)
     `
     update()
     setInterval(collectAutoUpgrades, 3000)
@@ -117,10 +117,10 @@ function buyFarmer() {
     cheese -= automaticUpgrades.cheeseFarmer.price
     automaticUpgrades.cheeseFarmer.price *= 1.1
     updateFarmers.innerHTML = `
-    ${automaticUpgrades.cheeseFarmer.quantity} Farmers
+    ${automaticUpgrades.cheeseFarmer.quantity} Sun-Praisers
     `
     updateFP.innerHTML = `
-    (${automaticUpgrades.cheeseFarmer.price.toFixed(0)}C)
+    (${automaticUpgrades.cheeseFarmer.price.toFixed(0)}S)
     `
     update()
     setInterval(collectAutoUpgrades, 3000)
