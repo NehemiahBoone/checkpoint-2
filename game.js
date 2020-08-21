@@ -2,6 +2,8 @@ let cheese = 0;
 let updateCheese = document.getElementById("cheeseCount")
 let updateShovels = document.getElementById("shovels")
 let updateCheeseMachine = document.getElementById("cheeseM")
+let updateMice = document.getElementById("mouse")
+let updateFarmers = document.getElementById("cheeseF")
 
 
 let clickUpgrades = {
@@ -11,17 +13,22 @@ let clickUpgrades = {
     multiplier: 1
   },
   cheeseMachine: {
-    price: 600,
+    price: 300,
     quantity: 0,
     multiplier: 20
   }
 }
 
 let automaticUpgrades = {
-  cheeseMouse: {
-    price: 500,
+  mouse: {
+    price: 600,
     quantity: 0,
-    multiplier: 2
+    multiplier: 15
+  },
+  cheeseFarmer: {
+    price: 2000,
+    quantity: 0,
+    multiplier: 100
   }
 }
 
@@ -64,4 +71,12 @@ function buyCheeseMachine() {
     update()
     console.log(clickUpgrades.cheeseMachine.quantity)
   }
+}
+
+function buyMouse() {
+
+}
+
+function buyFarmer() {
+
 }
