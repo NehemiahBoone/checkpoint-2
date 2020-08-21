@@ -99,8 +99,12 @@ function buyMouse() {
   if (cheese >= automaticUpgrades.mouse.price) {
     automaticUpgrades.mouse.quantity++
     cheese -= automaticUpgrades.mouse.price
+    automaticUpgrades.mouse.price *= 1.1
     updateMice.innerHTML = `
     ${automaticUpgrades.mouse.quantity} Mice
+    `
+    updateMP.innerHTML = `
+    (${automaticUpgrades.mouse.price.toFixed(0)}C)
     `
     update()
     setInterval(collectAutoUpgrades, 3000)
@@ -111,8 +115,12 @@ function buyFarmer() {
   if (cheese >= automaticUpgrades.cheeseFarmer.price) {
     automaticUpgrades.cheeseFarmer.quantity++
     cheese -= automaticUpgrades.cheeseFarmer.price
+    automaticUpgrades.cheeseFarmer.price *= 1.1
     updateFarmers.innerHTML = `
     ${automaticUpgrades.cheeseFarmer.quantity} Farmers
+    `
+    updateFP.innerHTML = `
+    (${automaticUpgrades.cheeseFarmer.price.toFixed(0)}C)
     `
     update()
     setInterval(collectAutoUpgrades, 3000)
