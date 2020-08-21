@@ -17,14 +17,14 @@
       <h1>MODIFIED STATS</h1>
       <div class="card" style="width: 18rem;">
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">Souls per second: <span id="cps">0</span></li>
-          <li class="list-group-item">Hit Multiplier: 1+ <span id="tcm">0</span></li>
+          <li class="list-group-item">Souls per second: <span id="sps">0</span></li>
+          <li class="list-group-item">Hit Multiplier: 1+ <span id="hm">0</span></li>
         </ul>
       </div>
     </div>
 
     <div class="col-3 text-center mt-5">
-      <img src="//placehold.it/200x200" alt="" onClick="mine()">
+      <img src="//placehold.it/200x200" alt="" onClick="hit()">
     </div>
 
   </section>
@@ -32,7 +32,7 @@
   <section class="row">
 
     <div class="col-4 ml-4 mt-4">
-      <h2>SOULS: <span id="cheeseCount">--</span></h2>
+      <h2>SOULS: <span id="soulCount">--</span></h2>
     </div>
 
   </section>
@@ -40,21 +40,24 @@
   <section class="row">
 
     <div class="col-3 ml-4 mt-4">
-      <button type="button" class="btn btn-primary" onClick="buyShovel()">Apply Soul Resin <small id="shovelPrice">(50
+      <button type="button" class="btn btn-primary" onClick="buySoulResin()">Apply Soul Resin <small
+          id="soulResinPrice">(50
           S)</small></button>
-      <p id="shovels">0 Resin Strength</p>
+      <p id="soulR">0 Resin Strength</p>
 
-      <button type="button" class="btn btn-primary" onClick="buyCheeseMachine()">Buy Silver Serpent Ring
-        <small id="cheeseMachinePrice">(300 S)</small></button>
-      <p id="cheeseM">0 Silver Serpent Rings</p>
+      <button type="button" class="btn btn-primary" onClick="buySilverSerpentRing()">Buy Silver Serpent Ring
+        <small id="silverSerpentRingPrice">(300 S)</small></button>
+      <p id="serpentR">0 Silver Serpent Rings</p>
 
-      <button type="button" class="btn btn-primary" onClick="buyMouse()">Summon Player <small id="mousePrice">(600
+      <button type="button" class="btn btn-primary" onClick="summonPlayer()">Summon Player <small
+          id="summonPlayerPrice">(600
           S)</small></button>
-      <p id="mouse">0 Friendly Hollowed</p>
+      <p id="hollow">0 Friendly Hollowed</p>
 
-      <button type="button" class="btn btn-primary" onClick="buyFarmer()">Summon Solaire <small id="farmerPrice">(2000
+      <button type="button" class="btn btn-primary" onClick="summonSolaire()">Summon Solaire <small
+          id="summonSolairePrice">(2000
           S)</small></button>
-      <p id="cheeseF">0 Sun-Praisers</p>
+      <p id="solaire">0 Sun-Praisers</p>
 
     </div>
     <div class="col-3 mt-4">

@@ -1,17 +1,17 @@
 let souls = 0;
-let updateSouls = document.getElementById("cheeseCount")
-let updateSoulResin = document.getElementById("shovels")
-let updateSerpentRing = document.getElementById("cheeseM")
-let updateHollowFriend = document.getElementById("mouse")
-let updateSolaire = document.getElementById("cheeseF")
-let updateSPS = document.getElementById("cps")
-let updateHM = document.getElementById("tcm")
-let updateSRP = document.getElementById("shovelPrice")
-let updateSSRP = document.getElementById("cheeseMachinePrice")
-let updateHFP = document.getElementById("mousePrice")
-let updateSP = document.getElementById("farmerPrice")
+let updateSouls = document.getElementById("soulCount")
+let updateSoulResin = document.getElementById("soulR")
+let updateSerpentRing = document.getElementById("serpentR")
+let updateHollowFriend = document.getElementById("hollow")
+let updateSolaire = document.getElementById("solaire")
+let updateSPS = document.getElementById("sps")
+let updateHM = document.getElementById("hm")
+let updateSRP = document.getElementById("soulResinPrice")
+let updateSSRP = document.getElementById("silverSerpentRingPrice")
+let updateHFP = document.getElementById("summonPlayerPrice")
+let updateSP = document.getElementById("summonSolairePrice")
 
-
+//NOTE FIX OBJECT ELEMENT NAMES
 let clickUpgrades = {
   shovels: {
     price: 50,
@@ -41,7 +41,7 @@ let mouseArg = automaticUpgrades.mouse
 let farmerArg = automaticUpgrades.cheeseFarmer
 
 
-function mine() {
+function hit() {
   souls++
   if (clickUpgrades.shovels.quantity > 0) {
     souls += (clickUpgrades.shovels.multiplier * clickUpgrades.shovels.quantity)
@@ -64,7 +64,7 @@ function update() {
   `
 }
 
-function buyShovel() {
+function buySoulResin() {
   if (souls >= clickUpgrades.shovels.price) {
     clickUpgrades.shovels.quantity++
     souls -= clickUpgrades.shovels.price
@@ -79,7 +79,7 @@ function buyShovel() {
   }
 }
 
-function buyCheeseMachine() {
+function buySilverSerpentRing() {
   if (souls >= clickUpgrades.cheeseMachine.price) {
     clickUpgrades.cheeseMachine.quantity++
     souls -= clickUpgrades.cheeseMachine.price
@@ -95,7 +95,7 @@ function buyCheeseMachine() {
   }
 }
 
-function buyMouse() {
+function summonPlayer() {
   if (souls >= automaticUpgrades.mouse.price) {
     automaticUpgrades.mouse.quantity++
     souls -= automaticUpgrades.mouse.price
@@ -111,7 +111,7 @@ function buyMouse() {
   }
 }
 
-function buyFarmer() {
+function summonSolaire() {
   if (souls >= automaticUpgrades.cheeseFarmer.price) {
     automaticUpgrades.cheeseFarmer.quantity++
     souls -= automaticUpgrades.cheeseFarmer.price
