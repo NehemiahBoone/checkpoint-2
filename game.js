@@ -4,6 +4,8 @@ let updateShovels = document.getElementById("shovels")
 let updateCheeseMachine = document.getElementById("cheeseM")
 let updateMice = document.getElementById("mouse")
 let updateFarmers = document.getElementById("cheeseF")
+let updateCPS = document.getElementById("cps")
+let updateTCM = document.getElementById("tcm")
 
 
 let clickUpgrades = {
@@ -50,6 +52,12 @@ function update() {
   updateCheese.innerHTML = `
   ${cheese}
   `
+  updateCPS.innerHTML = `
+  ${(((automaticUpgrades.mouse.multiplier * automaticUpgrades.mouse.quantity) + (automaticUpgrades.cheeseFarmer.multiplier * automaticUpgrades.cheeseFarmer.quantity)) / 3).toFixed(0)}
+  `
+  updateTCM.innerHTML = `
+  ${(clickUpgrades.shovels.multiplier * clickUpgrades.shovels.quantity) + (clickUpgrades.cheeseMachine.multiplier * clickUpgrades.cheeseMachine.quantity)}
+  `
 }
 
 function buyShovel() {
@@ -88,11 +96,20 @@ function buyMouse() {
 }
 
 function buyFarmer() {
-
+  if (cheese >= automaticUpgrades.cheeseFarmer.price) {
+    automaticUpgrades.cheeseFarmer.quantity++
+    cheese -= automaticUpgrades.cheeseFarmer.price
+    updateFarmers.innerHTML = `
+    ${automaticUpgrades.cheeseFarmer.quantity} Farmers
+    `
+    update()
+    setInterval(collectAutoUpgrades, 3000)
+  }
 }
 
 function collectAutoUpgrades() {
   cheese += (automaticUpgrades.mouse.multiplier * automaticUpgrades.mouse.quantity)
+  cheese += (automaticUpgrades.cheeseFarmer.multiplier * automaticUpgrades.cheeseFarmer.quantity)
   update()
 }
 
