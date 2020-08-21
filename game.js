@@ -6,6 +6,10 @@ let updateMice = document.getElementById("mouse")
 let updateFarmers = document.getElementById("cheeseF")
 let updateCPS = document.getElementById("cps")
 let updateTCM = document.getElementById("tcm")
+let updateSP = document.getElementById("shovelPrice")
+let updateCMP = document.getElementById("cheeseMachinePrice")
+let updateMP = document.getElementById("mousePrice")
+let updateFP = document.getElementById("farmerPrice")
 
 
 let clickUpgrades = {
@@ -50,7 +54,7 @@ function mine() {
 
 function update() {
   updateCheese.innerHTML = `
-  ${cheese}
+  ${cheese.toFixed(0)}
   `
   updateCPS.innerHTML = `
   ${(((automaticUpgrades.mouse.multiplier * automaticUpgrades.mouse.quantity) + (automaticUpgrades.cheeseFarmer.multiplier * automaticUpgrades.cheeseFarmer.quantity)) / 3).toFixed(0)}
@@ -64,8 +68,12 @@ function buyShovel() {
   if (cheese >= clickUpgrades.shovels.price) {
     clickUpgrades.shovels.quantity++
     cheese -= clickUpgrades.shovels.price
+    clickUpgrades.shovels.price += 8
     updateShovels.innerHTML = `
     ${clickUpgrades.shovels.quantity} Shovels
+    `
+    updateSP.innerHTML = `
+    (${clickUpgrades.shovels.price.toFixed(0)}C)
     `
     update()
   }
@@ -75,8 +83,12 @@ function buyCheeseMachine() {
   if (cheese >= clickUpgrades.cheeseMachine.price) {
     clickUpgrades.cheeseMachine.quantity++
     cheese -= clickUpgrades.cheeseMachine.price
+    clickUpgrades.cheeseMachine.price *= 1.1
     updateCheeseMachine.innerHTML = `
     ${clickUpgrades.cheeseMachine.quantity} Cheese Machines
+    `
+    updateCMP.innerHTML = `
+    (${clickUpgrades.cheeseMachine.price.toFixed(0)}C)
     `
     update()
     console.log(clickUpgrades.cheeseMachine.quantity)
