@@ -31,15 +31,17 @@ let automaticUpgrades = {
     multiplier: 100
   }
 }
+let mouseArg = automaticUpgrades.mouse
+let farmerArg = automaticUpgrades.cheeseFarmer
 
 
 function mine() {
   cheese++
   if (clickUpgrades.shovels.quantity > 0) {
-    cheese += clickUpgrades.shovels.multiplier * clickUpgrades.shovels.quantity
+    cheese += (clickUpgrades.shovels.multiplier * clickUpgrades.shovels.quantity)
   }
   if (clickUpgrades.cheeseMachine.quantity > 0) {
-    cheese += clickUpgrades.cheeseMachine.multiplier * clickUpgrades.cheeseMachine.quantity
+    cheese += (clickUpgrades.cheeseMachine.multiplier * clickUpgrades.cheeseMachine.quantity)
   }
   update()
 }
@@ -74,9 +76,26 @@ function buyCheeseMachine() {
 }
 
 function buyMouse() {
-
+  if (cheese >= automaticUpgrades.mouse.price) {
+    automaticUpgrades.mouse.quantity++
+    cheese -= automaticUpgrades.mouse.price
+    updateMice.innerHTML = `
+    ${automaticUpgrades.mouse.quantity} Mice
+    `
+    update()
+    setInterval(collectAutoUpgrades, 3000)
+  }
 }
 
 function buyFarmer() {
 
+}
+
+function collectAutoUpgrades() {
+  cheese += (automaticUpgrades.mouse.multiplier * automaticUpgrades.mouse.quantity)
+  update()
+}
+
+function startInterval() {
+  setInterval(collectAutoUpgrades, 3000)
 }
