@@ -1,0 +1,6 @@
+.hero-bg{
+  background: url(ds-bg.jpg);
+  background-size: cover;
+  background-position: center top;
+  min-height: 60vh;
+}

@@ -9,12 +9,12 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="hero-bg">
 
   <section class="row">
 
     <div class="offset-3 col-3">
-      <h1>MODIFIED STATS</h1>
+      <h1 class="text-light">MODIFIED STATS</h1>
       <div class="card" style="width: 18rem;">
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Souls per second: <span id="sps">0</span></li>
@@ -24,14 +24,14 @@
     </div>
 
     <div class="col-3 text-center mt-5">
-      <img src="//placehold.it/200x200" alt="" onClick="hit()">
+      <img src="soul.png" alt="" onClick="hit()">
     </div>
 
   </section>
 
   <section class="row">
 
-    <div class="col-4 ml-4 mt-4">
+    <div class="col-4 ml-4 mt-4 text-light">
       <h2>SOULS: <span id="soulCount">--</span></h2>
     </div>
 
@@ -43,21 +43,21 @@
       <button type="button" class="btn btn-primary" onClick="buySoulResin()">Apply Soul Resin <small
           id="soulResinPrice">(50
           S)</small></button>
-      <p id="soulR">0 Resin Strength</p>
+      <p id="soulR" class="text-light">0 Resin Strength</p>
 
       <button type="button" class="btn btn-primary" onClick="buySilverSerpentRing()">Buy Silver Serpent Ring
         <small id="silverSerpentRingPrice">(300 S)</small></button>
-      <p id="serpentR">0 Silver Serpent Rings</p>
+      <p id="serpentR" class="text-light">0 Silver Serpent Rings</p>
 
       <button type="button" class="btn btn-primary" onClick="summonPlayer()">Summon Player <small
           id="summonPlayerPrice">(600
           S)</small></button>
-      <p id="hollow">0 Friendly Hollowed</p>
+      <p id="hollow" class="text-light">0 Friendly Hollowed</p>
 
       <button type="button" class="btn btn-primary" onClick="summonSolaire()">Summon Solaire <small
           id="summonSolairePrice">(2000
           S)</small></button>
-      <p id="solaire">0 Sun-Praisers</p>
+      <p id="solaire" class="text-light">0 Sun-Praisers</p>
 
     </div>
     <div class="col-3 mt-4">
