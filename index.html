@@ -11,61 +11,54 @@
 
 <body class="hero-bg">
 
-  <section class="row">
+  <main class="container-fluid">
 
-    <div class="col-3 ml-4 mt-5">
-      <h1 class="text-light">MODIFIED STATS</h1>
-      <div class="card" style="width: 18rem;">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Souls per second: <span id="sps">0</span></li>
-          <li class="list-group-item">Hit Multiplier: 1+ <span id="hm">0</span></li>
-        </ul>
+    <section class="row">
+      <div class="col-12 col-md-3 ml-4 mt-5">
+        <h1 class="text-light">MODIFIED STATS</h1>
+        <div class="card" style="width: 18rem;">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Souls per second: <span id="sps">0</span></li>
+            <li class="list-group-item">Hit Multiplier: 1+ <span id="hm">0</span></li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <div class="offset-2 col-4">
-      <img src="/soul.png" alt="">
-    </div>
 
-  </section>
+      <div class="offset-md-2 col-12 col-md-4">
+        <img src="/soul.png" alt="" onClick="hit()">
+      </div>
+    </section>
 
-  <section class="row">
+    <section class="row">
+      <div class="col-12 col-md-6 ml-4 mt-4 text-light">
+        <h2>SOULS: <span id="soulCount">--</span></h2>
+      </div>
+    </section>
 
-    <div class="col-6 ml-4 mt-4 text-light">
-      <h2>SOULS: <span id="soulCount">--</span></h2>
-    </div>
+    <section class="row">
+      <div class="col-12 col-md-3 ml-4 mt-4">
+        <button type="button" class="btn btn-secondary" onClick="buySoulResin()">Apply Soul Resin <small
+            id="soulResinPrice">(50
+            S)</small></button>
+        <p id="soulR" class="text-light">0 Resin Strength</p>
 
-  </section>
+        <button type="button" class="btn btn-secondary" onClick="buySilverSerpentRing()">Buy Silver Serpent Ring
+          <small id="silverSerpentRingPrice">(300 S)</small></button>
+        <p id="serpentR" class="text-light">0 Silver Serpent Rings</p>
 
-  <section class="row">
+        <button type="button" class="btn btn-secondary" onClick="summonPlayer()">Summon Player <small
+            id="summonPlayerPrice">(600
+            S)</small></button>
+        <p id="hollow" class="text-light">0 Friendly Hollowed</p>
 
-    <div class="col-3 ml-4 mt-4">
-      <button type="button" class="btn btn-secondary" onClick="buySoulResin()">Apply Soul Resin <small
-          id="soulResinPrice">(50
-          S)</small></button>
-      <p id="soulR" class="text-light">0 Resin Strength</p>
+        <button type="button" class="btn btn-secondary" onClick="summonSolaire()">Summon Solaire <small
+            id="summonSolairePrice">(2000
+            S)</small></button>
+        <p id="solaire" class="text-light">0 Sun-Praisers</p>
+      </div>
+    </section>
 
-      <button type="button" class="btn btn-secondary" onClick="buySilverSerpentRing()">Buy Silver Serpent Ring
-        <small id="silverSerpentRingPrice">(300 S)</small></button>
-      <p id="serpentR" class="text-light">0 Silver Serpent Rings</p>
-
-      <button type="button" class="btn btn-secondary" onClick="summonPlayer()">Summon Player <small
-          id="summonPlayerPrice">(600
-          S)</small></button>
-      <p id="hollow" class="text-light">0 Friendly Hollowed</p>
-
-      <button type="button" class="btn btn-secondary" onClick="summonSolaire()">Summon Solaire <small
-          id="summonSolairePrice">(2000
-          S)</small></button>
-      <p id="solaire" class="text-light">0 Sun-Praisers</p>
-
-    </div>
-    <div class="col-3 mt-4">
-
-    </div>
-
-
-
-  </section>
+  </main>
 
 
 
