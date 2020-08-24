@@ -1,4 +1,5 @@
-let souls = 0;
+let souls = 0
+let auto = 0
 let updateSouls = document.getElementById("soulCount")
 let updateSoulResin = document.getElementById("soulR")
 let updateSerpentRing = document.getElementById("serpentR")
@@ -98,6 +99,7 @@ function buySilverSerpentRing() {
 function summonPlayer() {
   if (souls >= automaticUpgrades.mouse.price) {
     automaticUpgrades.mouse.quantity++
+    auto += automaticUpgrades.mouse.multiplier
     souls -= automaticUpgrades.mouse.price
     automaticUpgrades.mouse.price *= 1.1
     updateHollowFriend.innerHTML = `
@@ -107,13 +109,13 @@ function summonPlayer() {
     (${automaticUpgrades.mouse.price.toFixed(0)} S)
     `
     update()
-    setInterval(collectAutoUpgrades, 3000)
   }
 }
 
 function summonSolaire() {
   if (souls >= automaticUpgrades.cheeseFarmer.price) {
     automaticUpgrades.cheeseFarmer.quantity++
+    auto += automaticUpgrades.cheeseFarmer.multiplier
     souls -= automaticUpgrades.cheeseFarmer.price
     automaticUpgrades.cheeseFarmer.price *= 1.1
     updateSolaire.innerHTML = `
@@ -123,16 +125,15 @@ function summonSolaire() {
     (${automaticUpgrades.cheeseFarmer.price.toFixed(0)} S)
     `
     update()
-    setInterval(collectAutoUpgrades, 3000)
   }
 }
 
 function collectAutoUpgrades() {
-  souls += (automaticUpgrades.mouse.multiplier * automaticUpgrades.mouse.quantity)
-  souls += (automaticUpgrades.cheeseFarmer.multiplier * automaticUpgrades.cheeseFarmer.quantity)
+  souls += auto
   update()
 }
 
 function startInterval() {
   setInterval(collectAutoUpgrades, 3000)
 }
+startInterval()
